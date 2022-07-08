@@ -1,3 +1,3 @@
 # jogoteca
 
-Aplicação utilizando Flask, projeto do Curso de Flask da Alura. 
+Aplicação de listagem de séries utilizando Flask em Python, projeto do Curso de Flask da Alura. 
