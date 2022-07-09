@@ -7,11 +7,12 @@ class Jogo:
         self.categoria = categoria
         self.console = console
 
+
 jogo1 = Jogo('Tetris', 'Puzzle', 'Atari')
 jogo2 = Jogo('God of War', 'Rack n Slash', 'PS2')
 jogo3 = Jogo('Mortal Kombat', 'Luta', 'PS2')
 
-lista = [jogo1, jogo2,jogo3]
+lista = [jogo1, jogo2, jogo3]
 
 app = Flask(__name__)
 
@@ -36,6 +37,20 @@ def criar():
 
     lista.append(jogo)
     return redirect('/')
+
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+
+@app.route('/autenticar', methods=['POST', ])
+def autenticar():
+    if 'alohomora' == request.form['senha']:
+        return redirect('/')
+    else:
+        return redirect('/login')
+
 
 
 app.run(debug=True)
